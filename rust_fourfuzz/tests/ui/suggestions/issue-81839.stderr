@@ -1,0 +1,26 @@
+error[E0308]: `match` arms have incompatible types
+  --> $DIR/issue-81839.rs:11:14
+   |
+LL | /     match num {
+LL | |         1 => {
+LL | |             cx.answer_str("hi");
+   | |             -------------------- this is found to be of type `()`
+LL | |         }
+LL | |         _ => cx.answer_str("hi"),
+   | |              ^^^^^^^^^^^^^^^^^^^ expected `()`, found future
+LL | |     }
+   | |_____- `match` arms have incompatible types
+   |
+help: consider removing this semicolon
+   |
+LL -             cx.answer_str("hi");
+LL +             cx.answer_str("hi")
+   |
+help: consider using a semicolon here, but this will discard any values in the match arms
+   |
+LL |     };
+   |      +
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0308`.

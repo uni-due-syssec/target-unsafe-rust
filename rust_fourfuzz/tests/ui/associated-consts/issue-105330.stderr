@@ -1,0 +1,49 @@
+error: expected one of `!` or `::`, found `A`
+  --> $DIR/issue-105330.rs:8:14
+   |
+LL | impl TraitWAssocConst for impl Demo {
+   |                                     - while parsing this item list starting here
+LL |
+LL |     pubconst A: str = 32;
+   |              ^ expected one of `!` or `::`
+LL | }
+   | - the item list ends here
+
+error[E0404]: expected trait, found struct `Demo`
+  --> $DIR/issue-105330.rs:6:32
+   |
+LL | impl TraitWAssocConst for impl Demo {
+   |                                ^^^^ not a trait
+
+error[E0658]: associated const equality is incomplete
+  --> $DIR/issue-105330.rs:11:28
+   |
+LL | fn foo<A: TraitWAssocConst<A=32>>() {
+   |                            ^^^^
+   |
+   = note: see issue #92827 <https://github.com/rust-lang/rust/issues/92827> for more information
+   = help: add `#![feature(associated_const_equality)]` to the crate attributes to enable
+   = note: this compiler was built on YYYY-MM-DD; consider upgrading it if it is out of date
+
+error[E0658]: associated const equality is incomplete
+  --> $DIR/issue-105330.rs:15:29
+   |
+LL | fn main<A: TraitWAssocConst<A=32>>() {
+   |                             ^^^^
+   |
+   = note: see issue #92827 <https://github.com/rust-lang/rust/issues/92827> for more information
+   = help: add `#![feature(associated_const_equality)]` to the crate attributes to enable
+   = note: this compiler was built on YYYY-MM-DD; consider upgrading it if it is out of date
+
+error[E0562]: `impl Trait` is not allowed in impl headers
+  --> $DIR/issue-105330.rs:6:27
+   |
+LL | impl TraitWAssocConst for impl Demo {
+   |                           ^^^^^^^^^
+   |
+   = note: `impl Trait` is only allowed in arguments and return types of functions and methods
+
+error: aborting due to 5 previous errors
+
+Some errors have detailed explanations: E0404, E0562, E0658.
+For more information about an error, try `rustc --explain E0404`.

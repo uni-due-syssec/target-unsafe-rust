@@ -1,0 +1,540 @@
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = #[allow(warnings)] 0; 0 }, }
+PRINT-DERIVE DEEP-RE-COLLECTED (DISPLAY): enum E { V = { let _ = #[allow(warnings)] #[allow(warnings)] 0; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #3 bytes(299..303),
+    },
+    Ident {
+        ident: "E",
+        span: #3 bytes(304..305),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #3 bytes(320..321),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #3 bytes(322..323),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #3 bytes(326..329),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #3 bytes(330..331),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #3 bytes(332..333),
+                    },
+                    Group {
+                        delimiter: None,
+                        stream: TokenStream [
+                            Punct {
+                                ch: '#',
+                                spacing: Alone,
+                                span: #0 bytes(541..542),
+                            },
+                            Group {
+                                delimiter: Bracket,
+                                stream: TokenStream [
+                                    Ident {
+                                        ident: "allow",
+                                        span: #0 bytes(543..548),
+                                    },
+                                    Group {
+                                        delimiter: Parenthesis,
+                                        stream: TokenStream [
+                                            Ident {
+                                                ident: "warnings",
+                                                span: #0 bytes(549..557),
+                                            },
+                                        ],
+                                        span: #0 bytes(548..558),
+                                    },
+                                ],
+                                span: #0 bytes(542..559),
+                            },
+                            Punct {
+                                ch: '#',
+                                spacing: Alone,
+                                span: #0 bytes(541..542),
+                            },
+                            Group {
+                                delimiter: Bracket,
+                                stream: TokenStream [
+                                    Ident {
+                                        ident: "allow",
+                                        span: #0 bytes(543..548),
+                                    },
+                                    Group {
+                                        delimiter: Parenthesis,
+                                        stream: TokenStream [
+                                            Ident {
+                                                ident: "warnings",
+                                                span: #0 bytes(549..557),
+                                            },
+                                        ],
+                                        span: #0 bytes(548..558),
+                                    },
+                                ],
+                                span: #0 bytes(542..559),
+                            },
+                            Literal {
+                                kind: Integer,
+                                symbol: "0",
+                                suffix: None,
+                                span: #0 bytes(560..561),
+                            },
+                        ],
+                        span: #3 bytes(334..339),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #3 bytes(339..340),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #3 bytes(341..342),
+                    },
+                ],
+                span: #3 bytes(324..344),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #3 bytes(344..345),
+            },
+        ],
+        span: #3 bytes(306..355),
+    },
+]
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = { 0; }; 0 }, }
+PRINT-DERIVE DEEP-RE-COLLECTED (DISPLAY): enum E { V = { let _ = { 0 }; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #7 bytes(423..427),
+    },
+    Ident {
+        ident: "E",
+        span: #7 bytes(428..429),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #7 bytes(444..445),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #7 bytes(446..447),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #7 bytes(450..453),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #7 bytes(454..455),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #7 bytes(456..457),
+                    },
+                    Group {
+                        delimiter: Brace,
+                        stream: TokenStream [
+                            Group {
+                                delimiter: None,
+                                stream: TokenStream [
+                                    Literal {
+                                        kind: Integer,
+                                        symbol: "0",
+                                        suffix: None,
+                                        span: #0 bytes(578..579),
+                                    },
+                                ],
+                                span: #7 bytes(460..465),
+                            },
+                        ],
+                        span: #7 bytes(458..467),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #7 bytes(467..468),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #7 bytes(469..470),
+                    },
+                ],
+                span: #7 bytes(448..472),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #7 bytes(472..473),
+            },
+        ],
+        span: #7 bytes(430..483),
+    },
+]
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = { {} }; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #11 bytes(423..427),
+    },
+    Ident {
+        ident: "E",
+        span: #11 bytes(428..429),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #11 bytes(444..445),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #11 bytes(446..447),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #11 bytes(450..453),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #11 bytes(454..455),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #11 bytes(456..457),
+                    },
+                    Group {
+                        delimiter: Brace,
+                        stream: TokenStream [
+                            Group {
+                                delimiter: None,
+                                stream: TokenStream [
+                                    Group {
+                                        delimiter: Brace,
+                                        stream: TokenStream [],
+                                        span: #0 bytes(596..598),
+                                    },
+                                ],
+                                span: #11 bytes(460..465),
+                            },
+                        ],
+                        span: #11 bytes(458..467),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #11 bytes(467..468),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #11 bytes(469..470),
+                    },
+                ],
+                span: #11 bytes(448..472),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #11 bytes(472..473),
+            },
+        ],
+        span: #11 bytes(430..483),
+    },
+]
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = { PATH; }; 0 }, }
+PRINT-DERIVE DEEP-RE-COLLECTED (DISPLAY): enum E { V = { let _ = { PATH }; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #15 bytes(423..427),
+    },
+    Ident {
+        ident: "E",
+        span: #15 bytes(428..429),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #15 bytes(444..445),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #15 bytes(446..447),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #15 bytes(450..453),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #15 bytes(454..455),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #15 bytes(456..457),
+                    },
+                    Group {
+                        delimiter: Brace,
+                        stream: TokenStream [
+                            Group {
+                                delimiter: None,
+                                stream: TokenStream [
+                                    Ident {
+                                        ident: "PATH",
+                                        span: #0 bytes(615..619),
+                                    },
+                                ],
+                                span: #15 bytes(460..465),
+                            },
+                        ],
+                        span: #15 bytes(458..467),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #15 bytes(467..468),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #15 bytes(469..470),
+                    },
+                ],
+                span: #15 bytes(448..472),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #15 bytes(472..473),
+            },
+        ],
+        span: #15 bytes(430..483),
+    },
+]
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = { 0 + 1; }; 0 }, }
+PRINT-DERIVE DEEP-RE-COLLECTED (DISPLAY): enum E { V = { let _ = { 0 + 1 }; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #19 bytes(423..427),
+    },
+    Ident {
+        ident: "E",
+        span: #19 bytes(428..429),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #19 bytes(444..445),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #19 bytes(446..447),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #19 bytes(450..453),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #19 bytes(454..455),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #19 bytes(456..457),
+                    },
+                    Group {
+                        delimiter: Brace,
+                        stream: TokenStream [
+                            Group {
+                                delimiter: None,
+                                stream: TokenStream [
+                                    Literal {
+                                        kind: Integer,
+                                        symbol: "0",
+                                        suffix: None,
+                                        span: #0 bytes(636..637),
+                                    },
+                                    Punct {
+                                        ch: '+',
+                                        spacing: Alone,
+                                        span: #0 bytes(638..639),
+                                    },
+                                    Literal {
+                                        kind: Integer,
+                                        symbol: "1",
+                                        suffix: None,
+                                        span: #0 bytes(640..641),
+                                    },
+                                ],
+                                span: #19 bytes(460..465),
+                            },
+                        ],
+                        span: #19 bytes(458..467),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #19 bytes(467..468),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #19 bytes(469..470),
+                    },
+                ],
+                span: #19 bytes(448..472),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #19 bytes(472..473),
+            },
+        ],
+        span: #19 bytes(430..483),
+    },
+]
+PRINT-DERIVE INPUT (DISPLAY): enum E { V = { let _ = { PATH + 1; }; 0 }, }
+PRINT-DERIVE DEEP-RE-COLLECTED (DISPLAY): enum E { V = { let _ = { PATH + 1 }; 0 }, }
+PRINT-DERIVE INPUT (DEBUG): TokenStream [
+    Ident {
+        ident: "enum",
+        span: #23 bytes(423..427),
+    },
+    Ident {
+        ident: "E",
+        span: #23 bytes(428..429),
+    },
+    Group {
+        delimiter: Brace,
+        stream: TokenStream [
+            Ident {
+                ident: "V",
+                span: #23 bytes(444..445),
+            },
+            Punct {
+                ch: '=',
+                spacing: Alone,
+                span: #23 bytes(446..447),
+            },
+            Group {
+                delimiter: Brace,
+                stream: TokenStream [
+                    Ident {
+                        ident: "let",
+                        span: #23 bytes(450..453),
+                    },
+                    Ident {
+                        ident: "_",
+                        span: #23 bytes(454..455),
+                    },
+                    Punct {
+                        ch: '=',
+                        spacing: Alone,
+                        span: #23 bytes(456..457),
+                    },
+                    Group {
+                        delimiter: Brace,
+                        stream: TokenStream [
+                            Group {
+                                delimiter: None,
+                                stream: TokenStream [
+                                    Ident {
+                                        ident: "PATH",
+                                        span: #0 bytes(658..662),
+                                    },
+                                    Punct {
+                                        ch: '+',
+                                        spacing: Alone,
+                                        span: #0 bytes(663..664),
+                                    },
+                                    Literal {
+                                        kind: Integer,
+                                        symbol: "1",
+                                        suffix: None,
+                                        span: #0 bytes(665..666),
+                                    },
+                                ],
+                                span: #23 bytes(460..465),
+                            },
+                        ],
+                        span: #23 bytes(458..467),
+                    },
+                    Punct {
+                        ch: ';',
+                        spacing: Alone,
+                        span: #23 bytes(467..468),
+                    },
+                    Literal {
+                        kind: Integer,
+                        symbol: "0",
+                        suffix: None,
+                        span: #23 bytes(469..470),
+                    },
+                ],
+                span: #23 bytes(448..472),
+            },
+            Punct {
+                ch: ',',
+                spacing: Alone,
+                span: #23 bytes(472..473),
+            },
+        ],
+        span: #23 bytes(430..483),
+    },
+]

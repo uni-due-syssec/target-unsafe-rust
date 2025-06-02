@@ -1,0 +1,21 @@
+error[E0391]: cycle detected when const-evaluating + checking `FOO`
+  --> $DIR/recursive-zst-static.rs:10:18
+   |
+LL | static FOO: () = FOO;
+   |                  ^^^
+   |
+   = note: ...which immediately requires const-evaluating + checking `FOO` again
+note: cycle used when linting top-level module
+  --> $DIR/recursive-zst-static.rs:10:1
+   |
+LL | / static FOO: () = FOO;
+LL | |
+LL | | fn main() {
+LL | |     FOO
+LL | | }
+   | |_^
+   = note: see https://rustc-dev-guide.rust-lang.org/overview.html#queries and https://rustc-dev-guide.rust-lang.org/query.html for more information
+
+error: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0391`.

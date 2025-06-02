@@ -1,0 +1,30 @@
+error[E0107]: trait takes at most 3 generic arguments but 6 generic arguments were supplied
+  --> $DIR/issue-101739-2.rs:18:14
+   |
+LL |           Dst: BikeshedIntrinsicFrom<
+   |                ^^^^^^^^^^^^^^^^^^^^^ expected at most 3 generic arguments
+...
+LL | /             ASSUME_LIFETIMES,
+LL | |             ASSUME_VALIDITY,
+LL | |             ASSUME_VISIBILITY,
+   | |_____________________________- help: remove these generic arguments
+
+error: the constant `ASSUME_ALIGNMENT` is not of type `Assume`
+  --> $DIR/issue-101739-2.rs:18:14
+   |
+LL |           Dst: BikeshedIntrinsicFrom<
+   |  ______________^
+LL | |
+LL | |             Src,
+LL | |             Context,
+...  |
+LL | |             ASSUME_VISIBILITY,
+LL | |         >,
+   | |_________^ expected `Assume`, found `bool`
+   |
+note: required by a bound in `BikeshedIntrinsicFrom`
+  --> $SRC_DIR/core/src/mem/transmutability.rs:LL:COL
+
+error: aborting due to 2 previous errors
+
+For more information about this error, try `rustc --explain E0107`.

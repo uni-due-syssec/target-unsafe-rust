@@ -1,0 +1,42 @@
+warning: creating a mutable reference to mutable static is discouraged
+  --> $DIR/issue-17718-const-bad-values.rs:5:41
+   |
+LL | const C2: &'static mut usize = unsafe { &mut S };
+   |                                         ^^^^^^ mutable reference to mutable static
+   |
+   = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+   = note: this will be a hard error in the 2024 edition
+   = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+   = note: `#[warn(static_mut_refs)]` on by default
+help: use `addr_of_mut!` instead to create a raw pointer
+   |
+LL | const C2: &'static mut usize = unsafe { addr_of_mut!(S) };
+   |                                         ~~~~~~~~~~~~~~~
+
+error[E0764]: mutable references are not allowed in the final value of constants
+  --> $DIR/issue-17718-const-bad-values.rs:1:34
+   |
+LL | const C1: &'static mut [usize] = &mut [];
+   |                                  ^^^^^^^
+
+error[E0013]: constants cannot refer to statics
+  --> $DIR/issue-17718-const-bad-values.rs:5:46
+   |
+LL | const C2: &'static mut usize = unsafe { &mut S };
+   |                                              ^
+   |
+   = help: consider extracting the value of the `static` to a `const`, and referring to that
+
+error[E0013]: constants cannot refer to statics
+  --> $DIR/issue-17718-const-bad-values.rs:5:46
+   |
+LL | const C2: &'static mut usize = unsafe { &mut S };
+   |                                              ^
+   |
+   = help: consider extracting the value of the `static` to a `const`, and referring to that
+   = note: duplicate diagnostic emitted due to `-Z deduplicate-diagnostics=no`
+
+error: aborting due to 3 previous errors; 1 warning emitted
+
+Some errors have detailed explanations: E0013, E0764.
+For more information about an error, try `rustc --explain E0013`.
